@@ -2,7 +2,7 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 
 #define MyAppName "SimpleGuiOCR"
-#define MyAppVersion "1.0"
+#define MyAppVersion "1.2"
 #define MyAppPublisher "Tizian Erlenberg"
 #define MyAppURL "https://github.com/tizianerlenberg/simpleGuiOcr"
 #define MyAppExeName "simpleGuiOcr.exe"

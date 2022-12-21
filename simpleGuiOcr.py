@@ -142,7 +142,7 @@ def doOcr(filePath, iLang, oLang, trans=False):
         for i, img in enumerate(listFiles):
             OPERATION = f'Processing "{truncateOp(filePath.name)}", part 2, page {i+1}'
             imgPath = tmpFile / img
-            cmd = f'"{TESSERACTPATH}" "{imgPath}" stdout'
+            cmd = f'"{TESSERACTPATH}" -l "{tesseractLang}" "{imgPath}" stdout'
             sess = sp.Popen(cmd,
                             shell=True,
                             stdout=sp.PIPE,
@@ -210,7 +210,7 @@ def process(infiles, outfile, iLang, oLang):
         else:
             outText = outText + doOcr(item, iLang, oLang)
         outText = outText + '\n\n'
-        with open(outfile, 'a') as file:
+        with open(outfile, 'a', encoding="utf-8") as file:
             file.write(outText)
         if not threading.main_thread().is_alive():
             break
